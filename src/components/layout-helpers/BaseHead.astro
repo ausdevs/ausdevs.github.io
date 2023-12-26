@@ -1,0 +1,55 @@
+---
+import {
+    AUTHOR,
+    GLOBAL_KEYWORDS,
+} from "@root/constants";
+
+interface Props {
+    title: string;
+    description: string;
+    keywords: string[];
+}
+
+const {
+    title,
+    description,
+    keywords,
+} = Astro.props;
+
+const newKeywords: string[] = [...keywords, ...GLOBAL_KEYWORDS];
+
+const canonical = new URL(Astro.url.pathname, Astro.site).href satisfies string;
+const keywordsStr = newKeywords.join(", ") satisfies string;
+---
+
+<head>
+    <title>{title}</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.jpg">
+    <meta name="author" content={AUTHOR}>
+    <meta name="description" content={description}>
+    <meta name="keywords" content={keywordsStr}>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content={canonical}>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content={title}>
+    <meta property="og:description" content={description}>
+    <meta property="og:image" content={new URL("favicon.jpg", Astro.site).href}>
+
+    <!-- Twitter Meta Tags -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content={title}>
+    <meta property="twitter:description" content={description}>
+    <meta property="twitter:image" content={new URL("favicon.jpg", Astro.site).href}>
+
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <slot />
+</head>
+

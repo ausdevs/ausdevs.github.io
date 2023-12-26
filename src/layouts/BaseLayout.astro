@@ -1,0 +1,75 @@
+---
+import "normalize.css";
+
+import {
+    SITE_TITLE,
+    DISCORD_INVITE_URL,
+    GITHUB_URL,
+} from "@root/constants";
+import BaseHead from "@components/layout-helpers/BaseHead.astro";
+import BaseFooter from "@components/layout-helpers/BaseFooter.astro";
+import "@fontsource/roboto";
+import "@root/global.css";
+import "./_BaseLayout.css";
+
+interface Props {
+    title: string;
+    description: string;
+    keywords: string[];
+    noRightSidebar?: boolean;
+}
+
+const {
+    title,
+    description,
+    keywords,
+    noRightSidebar,
+} = Astro.props;
+---
+
+<!doctype html>
+
+<!--
+License: Creative Commons Attribution-ShareAlike 4.0 International (CC-BY-SA-4.0)
+
+Full source code is available here:
+<https://github.com/ausdevs/ausdevs-wiki>
+-->
+
+<html lang="en">
+    <BaseHead
+        title={title}
+        description={description}
+        keywords={keywords}
+    />
+    <body>
+        <div id="masthead"><div id="masthead__content" class="content-column">
+            <a id="website-title" href="/">{SITE_TITLE}</a>
+            <div id="masthead__menu">
+                <a target="_blank" href={DISCORD_INVITE_URL}>Discord</a>
+                <a target="_blank" href={GITHUB_URL}>GitHub</a>
+            </div>
+        </div></div>
+        {/*
+        <div id="content-wrap" class="content-column">
+            <div id="content">
+                <slot />
+            </div>
+        </div>
+        */}
+        <div id="content-wrap" class="content-column">
+            <div id="content">
+                <slot />
+            </div>
+            {(!noRightSidebar) && Astro.slots.has("right-sidebar") &&
+                <div id="right-sidebar-wrap">
+                    <div id="right-sidebar">
+                        <slot name="right-sidebar" />
+                    </div>
+                </div>
+            }
+        </div>
+        <BaseFooter />
+    </body>
+</html>
+

@@ -1,0 +1,5 @@
+/* A hack to stop the browser from rendering a random scrollbar */
+div.display-latex.horizontally-scrolling-box > * {
+    width: 99%;
+}
+

@@ -1,0 +1,29 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+interface Props {
+    title: string;
+    description: string;
+    keywords: string[];
+    hidetoc?: boolean;
+}
+
+const {
+    title,
+    description,
+    keywords,
+    hidetoc = true,
+} = Astro.props;
+---
+
+<BaseLayout
+    title={title}
+    description={description}
+    keywords={keywords}
+    noRightSidebar={hidetoc}
+>
+    <h1>{title}</h1>
+    <slot />
+    <slot name="right-sidebar" slot="right-sidebar" />
+</BaseLayout>
+

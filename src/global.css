@@ -1,0 +1,79 @@
+:root {
+    /* Mirroring my LaTeX colour definitions */
+    --color--myblue:   rgb(66,133,244);
+    --color--myteal:   rgb(70,189,198);
+    --color--mygreen:  rgb(52,168,83);
+    --color--myyellow: rgb(251,188,4);
+    --color--myorange: rgb(255,109,1);
+    --color--myred:    rgb(234,67,53);
+    --color--mypurple: #9900ff;
+
+    --color--mylightred:   #ffb3b3; /* Similar to LaTeX `red!30` */
+    --color--mylightgreen: #b3ffb3; /* Similar to LaTeX `green!30` */
+    --color--mylightblue:  #b3b3ff; /* Similar to LaTeX `blue!30` */
+}
+
+html {
+    box-sizing: border-box;
+}
+* {
+    box-sizing: inherit;
+}
+
+/* General-purpose table */
+table.general th {
+    background-color: #bbb;
+}
+table.general td,
+table.general th {
+    border: 1px solid;
+    padding: 0.3em 0.6em 0.3em 0.6em;
+    white-space: pre-wrap; /* Makes "\n" act like <br> */
+}
+
+/* Highlighter spans */
+span.highlight {
+    padding: 0.3em 0.2em 0.3em;
+    background: #ffff00; /* Overwrite with your intended colour. */
+}
+
+/* Non-breaking elements */
+/* (often a span) */
+.nb {
+    white-space: nowrap;
+}
+
+/* Horizontally scrolling elements */
+.horizontally-scrolling-box {
+    overflow: auto;
+    white-space: nowrap;
+}
+
+/* Emulating the `description` environment from LaTeX */
+ul.description {
+    text-indent: -2.1em;
+    list-style-type: none;
+}
+ul.description > li {
+    margin-left: 2.1em;
+}
+/* You're going to need to add the item titles yourself though */
+ul.description span.item-title {
+    font-weight: bold;
+}
+
+/* An unordered list without text indentation. */
+ul.rootlevel {
+    padding-left: 0;
+    text-indent: 0;
+    list-style-type: none;
+}
+ul.rootlevel > li {
+    margin-left: 0;
+}
+
+span.inactive {
+    font-style: italic;
+    text-decoration: line-through;
+}
+

@@ -1,0 +1,39 @@
+#right-sidebar-toc-heading {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+#right-sidebar-toc {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.94em;
+}
+
+#right-sidebar-toc li {
+    margin-top: 0.45em;
+    margin-bottom: 0.45em;
+}
+
+#right-sidebar-toc li.right-sidebar-toc__level0 {
+    padding-left: 1.5em;
+    font-weight: bold;
+}
+#right-sidebar-toc li.right-sidebar-toc__level1 {
+    padding-left: 1.5em;
+}
+#right-sidebar-toc li.right-sidebar-toc__level2 {
+    padding-left: 3em;
+}
+#right-sidebar-toc li.right-sidebar-toc__level3 {
+    padding-left: 4.5em;
+}
+
+#right-sidebar-toc a {
+    color: inherit;
+    text-decoration: inherit;
+}
+#right-sidebar-toc a:hover {
+    text-decoration: underline;
+}
+

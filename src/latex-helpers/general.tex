@@ -1,0 +1,74 @@
+\usepackage{mathtools}
+\usepackage{soul} % Similar package to ulem
+
+% Core Mathematics
+\usepackage{siunitx}
+
+\usetikzlibrary{
+    arrows,
+    arrows.meta,
+    matrix
+}
+
+\newcommand\rhs{\textit{RHS}}
+\newcommand\lhs{\textit{LHS}}
+
+\newcommand{\Nth}[2]{\ensuremath{{#1}^\textit{#2}}}
+\newcommand{\diff}{\ensuremath{\mathrm{d}}}
+\newcommand{\parallelsum}{\mathbin{\|}}
+
+\newcommand{\myul}[1]{\ul{#1}} % A proxy for the preferred underline command.
+
+\DeclarePairedDelimiter\parens{(}{)}
+\DeclarePairedDelimiter\brackets{[}{]}
+\DeclarePairedDelimiter\braces{\{}{\}}
+
+\DeclarePairedDelimiter\abs{\lvert{}}{\rvert{}}
+\DeclarePairedDelimiter\inte{[}{]}
+
+\definecolor{myblue}{RGB}{66,133,244}
+\definecolor{myteal}{RGB}{70,189,198}
+\definecolor{mygreen}{RGB}{52,168,83}
+\definecolor{myyellow}{RGB}{251,188,4}
+\definecolor{myorange}{RGB}{255,109,1}
+\definecolor{myred}{RGB}{234,67,53}
+\definecolor{mypurple}{HTML}{9900FF}
+
+% TikZ styles
+\colorlet{DiagramGrayFill}{black!10}      \colorlet{DiagramGrayBorder}{black!60}
+\colorlet{DiagramYellowFill}{myyellow!40} \colorlet{DiagramYellowBorder}{myyellow}
+\colorlet{DiagramBlueFill}{myblue!30}     \colorlet{DiagramBlueBorder}{myblue}
+\colorlet{DiagramRedFill}{myred!30}       \colorlet{DiagramRedBorder}{myred}
+\colorlet{DiagramGreenFill}{mygreen!30}   \colorlet{DiagramGreenBorder}{mygreen}
+\colorlet{DiagramPurpleFill}{mypurple!35} \colorlet{DiagramPurpleBorder}{mypurple}
+\colorlet{DiagramOrangeFill}{myorange!40} \colorlet{DiagramOrangeBorder}{myorange}
+\tikzstyle{GraphNode} = [
+    circle,
+    minimum size=8mm,
+    text centered,
+    draw=DiagramGrayBorder,
+    line width=1.6pt,
+    fill=DiagramGrayFill
+]
+\tikzstyle{GraphNodeSmall} = [
+    GraphNode, draw=DiagramRedBorder, fill=DiagramRedFill, minimum size=6mm
+]
+\tikzstyle{GraphNodeYellow} = [
+    GraphNode, draw=DiagramYellowBorder, fill=DiagramYellowFill
+]
+\tikzstyle{GraphNodeBlue} = [
+    GraphNode, draw=DiagramBlueBorder, fill=DiagramBlueFill
+]
+\tikzstyle{GraphNodeRed} = [
+    GraphNode, draw=DiagramRedBorder, fill=DiagramRedFill
+]
+\tikzstyle{GraphNodeGreen} = [
+    GraphNode, draw=DiagramGreenBorder, fill=DiagramGreenFill
+]
+\tikzstyle{GraphNodePurple} = [
+    GraphNode, draw=DiagramPurpleBorder, fill=DiagramPurpleFill
+]
+\tikzstyle{GraphNodeOrange} = [
+    GraphNode, draw=DiagramOrangeBorder, fill=DiagramOrangeFill
+]
+

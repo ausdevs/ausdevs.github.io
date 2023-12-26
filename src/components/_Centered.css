@@ -1,0 +1,9 @@
+div.component-centered > * {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.component-centered > p {
+    text-align: center;
+}
+

@@ -1,0 +1,20 @@
+---
+import {
+    AUTHOR,
+    COPYRIGHT_YEAR,
+    SOURCE_CODE_URL,
+} from "@root/constants";
+
+import ccbysaImg from "./_BaseFooter_images/cc-by-sa-4.0-88x31.png";
+---
+
+<footer id="footer" class="content-column">
+    <div id="footer-text">
+        &copy; {`${COPYRIGHT_YEAR} ${AUTHOR}`}. All content on this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+        <br />
+        This site's source code is available on <a href={SOURCE_CODE_URL}>GitHub</a>.
+    </div>
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src={ccbysaImg.src} /></a>
+    <!-- ccbysaImg original source: src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" -->
+</footer>
+

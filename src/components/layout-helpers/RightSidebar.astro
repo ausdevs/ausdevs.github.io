@@ -1,0 +1,36 @@
+---
+import {type MarkdownHeading} from "astro";
+
+import "./RightSidebar.css";
+
+interface Props {
+    headings: MarkdownHeading[];
+}
+
+const {
+    headings,
+} = Astro.props;
+
+function depthToClass(depth: number) {
+    switch (depth) {
+        case 1: return "right-sidebar-toc__level0";
+        case 2: return "right-sidebar-toc__level1";
+        case 3: return "right-sidebar-toc__level2";
+        case 4: return "right-sidebar-toc__level3";
+        case 5: return "right-sidebar-toc__level4";
+        default:
+    }
+    throw new Error("Unexpected value.");
+}
+---
+
+<span id="right-sidebar-toc-heading">Contents:</span>
+
+<ul id="right-sidebar-toc">
+    {headings.map((obj) =>
+        <li class={depthToClass(obj.depth)}>
+            <a href={`#${obj.slug}`}>{obj.text}</a>
+        </li>
+    )}
+</ul>
+

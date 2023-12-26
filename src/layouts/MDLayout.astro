@@ -1,0 +1,47 @@
+---
+import {isStrArray} from "@root/danger";
+import GeneralLayout from "@layouts/GeneralLayout.astro";
+import RightSidebar from "@components/layout-helpers/RightSidebar.astro";
+
+interface Props {
+    frontmatter: {[key: string]: unknown;};
+    headings: {depth: number; slug: string; text: string}[];
+}
+
+const {
+    frontmatter,
+    headings,
+} = Astro.props;
+const {
+    title,
+    description,
+    keywords,
+} = frontmatter;
+const hidetoc: boolean = !!frontmatter["hidetoc"];
+
+function errStr(expectedType: string, k: string, v: unknown) {
+    return `Expected ${k} to be a ${expectedType}. Actually received: ${v}`;
+}
+
+if (typeof title !== "string") {
+    throw new Error(errStr("a string", "title", title));
+}
+if (typeof description !== "string") {
+    throw new Error(errStr("a string", "description", description));
+}
+if (!isStrArray(keywords)) {
+    throw new Error(errStr("an array of strings", "keywords", keywords));
+}
+
+---
+
+<GeneralLayout
+    title={title}
+    description={description}
+    keywords={keywords}
+    hidetoc={hidetoc}
+>
+    <slot />
+    <RightSidebar slot="right-sidebar" headings={headings} />
+</BaseLayout>
+
