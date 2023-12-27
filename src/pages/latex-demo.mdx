@@ -1,0 +1,71 @@
+---
+layout: ../layouts/MDLayout.astro
+title: Wiki LaTeX Demo
+description: Examples of how to render LaTeX code on the wiki!
+keywords: []
+
+hidetoc: true
+---
+
+import AlignVarLatex from "@components/AlignVarLatex";
+import DisplayLatex from "@components/DisplayLatex";
+import GatherVarLatex from "@components/GatherVarLatex";
+import Latex from "@components/Latex";
+
+import Eqref from "@components/Eqref";
+
+This wiki uses <a href="https://katex.org/docs/supported"><Latex code="\KaTeX" /></a> for rendering LaTeX code. Visit [this page](https://katex.org/docs/supported) to see what LaTeX commands are supported, and check [our KaTeX configuration file](https://github.com/ausdevs/ausdevs.github.io/blob/master/src/latex-helpers/katex-config.ts) for the custom macros we use.
+
+**To see how the various examples below are implemented, check the source code of the page [here](https://github.com/ausdevs/ausdevs.github.io/blob/master/src/pages/latex-demo.mdx).**
+
+You can add inline LaTeX code like <Latex code="a^2 + b^2 = c^2" />. Typing out symbols like <Latex code="x" /> and <Latex code="\beta" /> can be very helpful for consistency in the document. Though sometimes, you can also just write them out "normally" like x and β.
+
+You can also render "display-style" equations using the `DisplayLatex` component:
+
+<DisplayLatex code="
+    x = \frac{-b \pm \sqrt{b^2 - 4 a c}}{2 a}
+" />
+
+We can also tag and reference equations. Notice the <Eqref>1</Eqref> over at the right of the equation below. This came from the `\tag` command. Also, use the `Eqref` component to reference your equations like this: <Eqref>1</Eqref>
+
+<DisplayLatex code="
+    c_n
+    = \frac{1}{P}
+    \int_{-\frac{P}{2}}^{\frac{P}{2}}
+    f \parens{x} e^{-i 2 \pi \frac{n}{P} x}
+    \, dx
+    \tag{1}
+" />
+
+However, `DisplayLatex` isn't ideal if you need to write out multiple lines. For multiple *unaligned* lines, you'll need the `GatherVarLatex` component. Note that each line ends with a double-backslash (`\\`):
+
+<GatherVarLatex code="
+    \int x^n \, dx
+    = \frac{x^{n + 1}}{n + 1} + C \quad \parens{n \ne -1}
+    \\
+    \int \sin x \, dx
+    = - \cos x + C
+    \tag{ayy}
+    \\
+    \int \frac{dx}{\sqrt{x^2 + a^2}}
+    = \sinh^{-1} \parens{\frac{x}{a}} + C
+    = \ln \parens{x + \sqrt{x^2 + a^2}} + C'
+    \tag{lmao}
+" />
+
+For multiple *aligned* lines, you'll need the `AlignVarLatex` component. Note the ampersand symbols `&` for the point of alignment:
+
+<AlignVarLatex code="
+    f \parens{x}
+    &= f \parens{a}
+    + \frac{f' \parens{a}}{1!} \parens{x - a}
+    + \frac{f'' \parens{a}}{2!} \parens{x - a}^2
+    + \frac{f''' \parens{a}}{3!} \parens{x - a}^3
+    + \cdots
+    \\
+    &= \sum_{n = 0}^\infty \frac{f^\parens{n} \parens{a}}{n!}
+    \parens{x - a}^n
+" />
+
+And that's all there is to know about rendering LaTeX on this wiki! For a more in-depth guide on LaTeX itself, [this Wikibooks article](https://en.wikibooks.org/wiki/LaTeX) can be a good start.
+
