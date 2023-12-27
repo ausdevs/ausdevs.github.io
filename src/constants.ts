@@ -7,4 +7,5 @@ export const SOURCE_CODE_URL = "https://github.com/ausdevs/ausdevs-wiki";
 
 export const DISCORD_INVITE_URL = "https://discord.gg/rqYySvHKpS";
 export const GITHUB_URL = "https://github.com/ausdevs";
+export const CONTRIBUTING_URL = "https://github.com/ausdevs/ausdevs.github.io/blob/master/CONTRIBUTING.md";
 
