@@ -1,4 +1,4 @@
-export const SITE = "https://ausdevs.github.io/";
+export const SITE = "https://ausdevs.com/";
 export const SITE_TITLE = "AusDevs Wiki";
 export const AUTHOR = "AusDevs";
 export const COPYRIGHT_YEAR = 2023;
