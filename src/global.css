@@ -27,12 +27,11 @@ html {
     box-sizing: inherit;
 }
 
-/* General-purpose table */
-table.general th {
+table th {
     background-color: #bbb;
 }
-table.general td,
-table.general th {
+table td,
+table th {
     border: 1px solid;
     padding: 0.3em 0.6em 0.3em 0.6em;
     white-space: pre-wrap; /* Makes "\n" act like <br> */
