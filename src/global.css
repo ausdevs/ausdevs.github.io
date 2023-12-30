@@ -13,6 +13,13 @@
     --color--mylightblue:  #b3b3ff; /* Similar to LaTeX `blue!30` */
 }
 
+@media print {
+    /* Add this to anything you want to hide for printing */
+    .no-print {
+        display: none !important;
+    }
+}
+
 html {
     box-sizing: border-box;
 }

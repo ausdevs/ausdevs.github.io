@@ -44,7 +44,7 @@ Full source code is available here:
         keywords={keywords}
     />
     <body>
-        <div id="masthead"><div id="masthead__content" class="content-column">
+        <div id="masthead" class="no-print"><div id="masthead__content" class="content-column">
             <a id="website-title" href="/">{SITE_TITLE}</a>
             <div id="masthead__menu">
                 <a target="_blank" href={DISCORD_INVITE_URL}>Discord</a>
@@ -64,7 +64,7 @@ Full source code is available here:
                 <slot />
             </div>
             {(!noRightSidebar) && Astro.slots.has("right-sidebar") &&
-                <div id="right-sidebar-wrap">
+                <div id="right-sidebar-wrap" class="no-print">
                     <div id="right-sidebar">
                         <slot name="right-sidebar" />
                     </div>
