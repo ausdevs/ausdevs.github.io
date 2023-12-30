@@ -1,5 +1,16 @@
-/* A hack to stop the browser from rendering a random scrollbar */
+div.display-latex {
+    /* A hack to prevent weird scrollbars */
+    overflow-y: hidden;
+}
+
+div.display-latex .katex {
+    /* A hack to prevent weird scrollbars */
+    padding-left: 0.1em;
+    padding-right: 0.1em;
+}
+
 div.display-latex.horizontally-scrolling-box > * {
-    width: 99%;
+    margin-top: 0; /* override default margin */
+    margin-bottom: 0; /* override default margin */
 }
 
