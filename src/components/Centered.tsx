@@ -1,5 +1,5 @@
 import {type JSXChildren} from "@root/tech-debt";
-import "./_Centered.css";
+import "./Centered.css";
 
 interface Props {
     readonly children: JSXChildren;
