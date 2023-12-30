@@ -7,12 +7,12 @@ keywords: []
 hidetoc: true
 ---
 
-import AlignVarLatex from "@components/AlignVarLatex";
-import DisplayLatex from "@components/DisplayLatex";
-import GatherVarLatex from "@components/GatherVarLatex";
-import Latex from "@components/Latex";
+import AlignLatex from "@components/latex/AlignLatex";
+import DisplayLatex from "@components/latex/DisplayLatex";
+import GatherLatex from "@components/latex/GatherLatex";
+import Latex from "@components/latex/Latex";
 
-import Eqref from "@components/Eqref";
+import Eqref from "@components/latex/Eqref";
 
 This wiki uses <a href="https://katex.org/docs/supported"><Latex code="\KaTeX" /></a> for rendering LaTeX code. Visit [this page](https://katex.org/docs/supported) to see what LaTeX commands are supported, and check [our KaTeX configuration file](https://github.com/ausdevs/ausdevs.github.io/blob/master/src/latex-helpers/katex-config.ts) for the custom macros we use.
 
@@ -37,9 +37,9 @@ We can also tag and reference equations. Notice the <Eqref>1</Eqref> over at the
     \tag{1}
 " />
 
-However, `DisplayLatex` isn't ideal if you need to write out multiple lines. For multiple *unaligned* lines, you'll need the `GatherVarLatex` component. Note that each line ends with a double-backslash (`\\`):
+However, `DisplayLatex` isn't ideal if you need to write out multiple lines. For multiple *unaligned* lines, you'll need the `GatherLatex` component. Note that each line ends with a double-backslash (`\\`):
 
-<GatherVarLatex code="
+<GatherLatex code="
     \int x^n \, dx
     = \frac{x^{n + 1}}{n + 1} + C \quad \parens{n \ne -1}
     \\
@@ -53,9 +53,9 @@ However, `DisplayLatex` isn't ideal if you need to write out multiple lines. For
     \tag{lmao}
 " />
 
-For multiple *aligned* lines, you'll need the `AlignVarLatex` component. Note the ampersand symbols `&` for the point of alignment:
+For multiple *aligned* lines, you'll need the `AlignLatex` component. Note the ampersand symbols `&` for the point of alignment:
 
-<AlignVarLatex code="
+<AlignLatex code="
     f \parens{x}
     &= f \parens{a}
     + \frac{f' \parens{a}}{1!} \parens{x - a}

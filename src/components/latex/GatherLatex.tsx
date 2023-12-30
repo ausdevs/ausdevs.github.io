@@ -9,8 +9,8 @@ interface Props {
     readonly code: string;
 }
 
-export default function GatherVarLatex({code}: Props) {
-    const newCode = `\\begin{align*} ${code} \\end{align*}`;
+export default function GatherLatex({code}: Props) {
+    const newCode = `\\begin{gather*} ${code} \\end{gather*}`;
     const rawHTML = katex.renderToString(newCode, getConfig(true));
     return <p>
         <div
