@@ -11,9 +11,9 @@ interface Props {
 
 export default function DisplayLatex({code}: Props) {
     const rawHTML = katex.renderToString(code, getConfig(true));
-    return <div
+    return <p><div
         class="display-latex horizontally-scrolling-box"
         dangerouslySetInnerHTML={{__html: rawHTML}}
-    />;
+    /></p>;
 }
 
