@@ -1,7 +1,7 @@
 export const SITE = "https://ausdevs.com/";
 export const SITE_TITLE = "AusDevs Wiki";
 export const AUTHOR = "AusDevs";
-export const COPYRIGHT_YEAR = 2023;
+export const COPYRIGHT_YEAR = 2024;
 export const GLOBAL_KEYWORDS = ["ausdevs"];
 export const SOURCE_CODE_URL = "https://github.com/ausdevs/ausdevs-wiki";
 
