@@ -9,7 +9,7 @@ interface Props {
     readonly children: JSXChildren;
 }
 
-export default function Latex({children}: Props) {
+export default function Eqref({children}: Props) {
     return <b>({children})</b>;
 }
 

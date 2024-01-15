@@ -8,7 +8,7 @@ interface Props {
     readonly children: JSXChildren;
 }
 
-export default function Latex({children}: Props) {
+export default function Nb({children}: Props) {
     return <span class="nb">{children}</span>;
 }
 

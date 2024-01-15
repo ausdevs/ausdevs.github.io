@@ -4,7 +4,7 @@ interface Props {
     readonly children: JSXChildren;
 }
 
-export default function Latex({children}: Props) {
+export default function TitleNormalText({children}: Props) {
     return <span style="font-size: initial;">{children}</span>;
 }
 
