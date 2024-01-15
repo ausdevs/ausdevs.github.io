@@ -9,3 +9,8 @@ export const DISCORD_INVITE_URL = "https://discord.gg/rqYySvHKpS";
 export const GITHUB_URL = "https://github.com/ausdevs";
 export const CONTRIBUTING_URL = "https://github.com/ausdevs/ausdevs.github.io/blob/master/CONTRIBUTING.md";
 
+export const channel_refs = {
+    "personal-finance": "https://discord.com/channels/1083238120645992458/1095879685948317706",
+}
+Object.freeze(channel_refs);
+
