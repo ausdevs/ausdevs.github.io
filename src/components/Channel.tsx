@@ -9,7 +9,7 @@ interface Props {
     readonly href?: string;
 }
 
-export default function Latex(props: Props) {
+export default function Channel(props: Props) {
     const {name} = props;
     const href = props.href || channel_refs[name];
     if (!href) {

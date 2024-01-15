@@ -1,0 +1,8 @@
+span.thoughts {
+    font-style: italic;
+}
+
+span.thoughts > span.thoughts-title {
+    font-weight: bold;
+}
+
