@@ -8,3 +8,7 @@ If you would like to contribute code or styling, please discuss with us either t
 
 Got any questions? Feel free to ask on [Discord](https://discord.gg/rqYySvHKpS)!
 
+## Rules Regarding Content
+
+This wiki must never contain defamatory content in any part of its commit history. The rest is common sense.
+
