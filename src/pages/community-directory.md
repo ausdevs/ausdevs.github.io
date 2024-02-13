@@ -9,7 +9,8 @@ hidetoc: true
 
 Self-promote your personal websites here!
 
-- **Hayden Cooper:** <https://haydenc.dev/>
+- **haydenc:** <https://haydenc.dev/>
+- **littlejackcoder:** <https://littlejackcoder.com/>
 - **simshadows:** <https://www.simshadows.com/>
 - **zax:** <https://zaxu.xyz/>
 
