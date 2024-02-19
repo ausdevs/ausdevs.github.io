@@ -1,0 +1,71 @@
+---
+import Layout from "@layouts/GeneralLayout.astro";
+
+import {
+    VenuesFactory,
+} from "./_venues-factory";
+
+const venuesFactory = new VenuesFactory([
+    {
+        region: "au",
+        venue: "Timezone",
+        lastUpdated: "2024-02-19",
+        priceTiers: [
+            {realCost: 6000, creditValue: 12000}
+        ],
+        comment: "This pricing is only available during \"double dollar\" promotions.",
+    },
+    {
+        region: "au",
+        venue: "Koko Amusement",
+        lastUpdated: "2024-02-19",
+        priceTiers: [
+            {realCost: 10000, creditValue: 16000}
+        ],
+        comment: "",
+    },
+    {
+        region: "sydney",
+        venue: "Fortress Sydney",
+        lastUpdated: "2024-02-19",
+        priceTiers: [
+            {realCost: 10000, creditValue: 15000}
+        ],
+        comment: "",
+    },
+    {
+        // helps validate that things are working correctly
+        region: "this is fake don't reference this please",
+        venue: "this is fake don't reference this please",
+        lastUpdated: "6969-04-01",
+        priceTiers: [
+            {realCost: 69, creditValue: 420}
+        ],
+        comment: "lmao ayy",
+    },
+]);
+const VenuesTable = venuesFactory.getVenuesTableComponent();
+---
+
+<Layout
+    title="Arcades Pricing Guide"
+    description="Pricing for Timezone, Koko, and other arcade locations across Australia and New Zealand!"
+    keywords={[]}
+>
+
+
+<em>The data on this page is crowdsourced and may be out of date.</em>
+
+
+<h2>Sydney</h2>
+
+<VenuesTable regions={["sydney", "au"]} />
+
+
+<h2>Other Locations</h2>
+
+<em>We don't have any data on other places yet. If you find anything, let us know or send a pull request!</em>
+
+
+</Layout>
+
