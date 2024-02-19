@@ -1,3 +1,6 @@
+import {printCurrency} from "@root/utils";
+
+
 export interface PriceTier {
     readonly realCost: number;
     readonly creditValue: number;
@@ -16,20 +19,6 @@ export interface VenueData {
 
 
 // ---------------------------------------------------------------------------------------
-
-
-function printCurrency(v: number) {
-    const left = Math.floor(v / 100);
-    let right = (v % 100).toString();
-    switch (right.length) {
-        default:
-            throw new Error("Unexpected cents length.");
-        case 1:
-            right = "0" + right;
-        case 2:
-    }
-    return `$${left}.${right}`;
-}
 
 
 interface VenuesTableRowProps {
@@ -68,6 +57,15 @@ export class VenuesFactory {
 
     constructor(venues: VenueData[]) {
         this.venues = venues;
+    }
+
+    getVenuesData(region: string, venue: string) {
+        for (const data of this.venues) {
+            if (data.region == region && data.venue == venue) {
+                return data;
+            }
+        }
+        throw new Error(`Venue not found (${region} ${venue})`);
     }
 
     getVenuesTableComponent() {

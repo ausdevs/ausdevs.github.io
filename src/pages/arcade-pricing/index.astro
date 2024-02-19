@@ -1,9 +1,13 @@
 ---
 import Layout from "@layouts/GeneralLayout.astro";
 
+import Thoughts from "@components/Thoughts";
+
 import {
     VenuesFactory,
 } from "./_venues-factory";
+
+import Cabinets from "./_CabinetPricingTable";
 
 const venuesFactory = new VenuesFactory([
     {
@@ -54,12 +58,77 @@ const VenuesTable = venuesFactory.getVenuesTableComponent();
 >
 
 
-<em>The data on this page is crowdsourced and may be out of date.</em>
+<p><em>The data on this page is crowdsourced and may be out of date.</em></p>
+
+<p>Each venue below has different pricing tiers. The pricing tiers chosen for this page represent typically-purchased tiers. There may be better-value tiers available at these venues though, so look into those yourself if you're looking to spend big.</p>
 
 
 <h2>Sydney</h2>
 
 <VenuesTable regions={["sydney", "au"]} />
+
+<p>Koko also offers $200 for $340 of credit, which is about 6% cheaper than $100 for $160 of credit.</p>
+
+<Cabinets
+    region="au"
+    venue="Timezone"
+    venuesFactory={venuesFactory}
+    cabinets={[
+        {
+            lastUpdated: "2024-02-19",
+            cabinet: "Point Blank X (Gun Bullet X)",
+            unitName: ["life", "lives"],
+            unitsPerCredit: 5,
+            creditCost: 240
+        },
+        {
+            lastUpdated: "2024-02-19",
+            cabinet: "Taiko no Tatsujin",
+            unitName: ["song", "songs"],
+            unitsPerCredit: 2,
+            creditCost: 280
+        },
+    ]}
+    comments="All pricing assumes you're using at least a Blue Elite card."
+/>
+
+<Thoughts user="simshadows" date="2024-02-19">Timezone's Taiko machines tend to feel very insensitive, meaning you have to hit harder to register a hit. It's fine for casual play, but it tires you out faster if you play harder difficulties.</Thoughts>
+
+<Cabinets
+    region="au"
+    venue="Koko Amusement"
+    venuesFactory={venuesFactory}
+    cabinets={[
+        {
+            lastUpdated: "2024-02-19",
+            cabinet: "Taiko no Tatsujin",
+            unitName: ["song", "songs"],
+            unitsPerCredit: 2,
+            creditCost: 240
+        },
+    ]}
+    comments="All pricing assumes you're using a VIP card."
+/>
+
+<Thoughts user="simshadows" date="2024-02-19">Some of the Koko 614 George St. venue's Taiko machines feel very sensitive, which is really good!</Thoughts>
+
+<Cabinets
+    region="sydney"
+    venue="Fortress Sydney"
+    venuesFactory={venuesFactory}
+    cabinets={[
+        {
+            lastUpdated: "2024-02-19",
+            cabinet: "Taiko no Tatsujin",
+            unitName: ["song", "songs"],
+            unitsPerCredit: 2,
+            creditCost: 250
+        },
+    ]}
+    comments=""
+/>
+
+<Thoughts user="simshadows" date="2024-02-19">The Fortress Taiko machines I tried feel very sensitive, which is really good!</Thoughts>
 
 
 <h2>Other Locations</h2>
