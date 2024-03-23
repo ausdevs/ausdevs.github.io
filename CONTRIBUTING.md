@@ -10,5 +10,9 @@ Got any questions? Feel free to ask on [Discord](https://discord.gg/rqYySvHKpS)!
 
 ## Rules Regarding Content
 
-This wiki must never contain defamatory content in any part of its commit history.
+This wiki must never contain the following content in *any* part of its commit history:
 
+- Defamatory content.
+    - Notably, we consider company "tier lists" or rankings to be defamatory.
+- "Lore" about specific individuals (whether or not these individuals are within AusDevs).
+    - This rule applies whether or not the "lore" around the individual is positive or negative/defamatory.
