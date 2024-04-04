@@ -1,0 +1,27 @@
+---
+layout: "@layouts/MDLayout.astro"
+title: Bot Checklist (Admin Notes)
+description: Checklist for what to do when inviting bots.
+keywords: []
+
+hidetoc: true
+---
+
+import {Image} from "astro:assets";
+import Centered from "@components/Centered";
+
+
+- The first OAuth screen should look like this:
+
+import OAuthPage1 from "./_images/oauth-page1.png"; //_
+
+<p><Image src={OAuthPage1} alt="OAuth Page 1." style="width: auto; max-height: 32em;" /></p>
+
+- Strip away all default permissions in the second OAuth screen:
+
+import OAuthPage2 from "./_images/oauth-page2.png"; //_
+
+<p><Image src={OAuthPage2} alt="OAuth Page 2." style="object-fit: contain; width: auto; max-height: 32em;" /></p>
+
+- Immediately after adding the bot, you must grant it the `Bot` role.
+
